@@ -1,0 +1,23 @@
+.home_section{
+    width: 100%;
+    position: relative;
+    top:60px;
+    background-color: #e7e7e7;
+    min-height: calc(100vh - 60px);
+    border-bottom: 2px solid rgb(199, 199, 199);
+    margin-bottom: 10px;
+    
+}
+
+/* body::-webkit-scrollbar {
+    background-color: transparent;
+    /* background: transparent; */
+    /* width: 12px; */
+    /* height: 10px; */
+  /* } */
+
+  /* body::-webkit-scrollbar-thumb { */
+    /* background: linear-gradient(rgb(219, 207, 207), rgb(44, 44, 177), green); */
+    /* border-radius: 10px; */
+  /* } */
+
