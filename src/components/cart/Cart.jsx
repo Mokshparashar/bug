@@ -7,10 +7,10 @@ const Cart = () => {
   const { id } = useParams("");
   // console.log(id);
 
-  const [inddata, setinddata] = useState("");
-  console.log(inddata);
+  const [inddata, setinddata] = useState({});
+  // console.log(inddata);
   const getinddata = async () => {
-    const res = await fetch(`getproductsone/${id}`, {
+    const res = await fetch(`http://localhost:8005/getproductsone/${id}`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -18,6 +18,7 @@ const Cart = () => {
     });
 
     const data = await res.json();
+    console.log(data);
     if (res.status !== 201) {
       alert("no data available");
     } else {
@@ -34,7 +35,7 @@ const Cart = () => {
     <div className="cart_section">
       <div className="cart_container">
         <div className="left_cart">
-          <img src={inddata.detailUrl} alt="cart" />
+          <img src={inddata?.url} alt="cart" />
           <div className="cart_btn">
             <button className="cart_btn1">Add to Cart</button>
             <button className="cart_btn2">Buy Now</button>
@@ -42,7 +43,7 @@ const Cart = () => {
         </div>
         <div className="right_cart">
           <h3>{inddata?.title?.shortTitle}</h3>
-          <h4>{inddata.longTitle}</h4>
+          <h4>{inddata?.longTitle}</h4>
           <Divider />
           {/* <p className="mrp">M.R.P. : ₹{in/ddata.price.mrp}</p> */}
           <p>
